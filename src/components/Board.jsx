@@ -82,7 +82,11 @@ export default function Board() {
     calculateTrajectories(newBall);
 
     // Update Firebase
-    const normalizedBall = { x: ball.x / WIDTH, y: ball.y / HEIGHT, color: ball.color };
+    const normalizedBall = {
+      x: newBall.x / WIDTH,
+      y: newBall.y / HEIGHT,
+      color: newBall.color,
+    };
     set(ref(database, 'board/ball'), normalizedBall);
   };
 
@@ -176,8 +180,8 @@ export default function Board() {
       const data = snapshot.val();
       if (data) {
         const scaledBall = { ...data, x: data.x * WIDTH, y: data.y * HEIGHT };
-        setBall(data);
-        calculateTrajectories(data);
+        setBall(scaledBall);
+        calculateTrajectories(scaledBall);
       }
     });
   }, []);
