@@ -4,6 +4,7 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyBk1qSRzrELZ6NE1chg80oJVMm5l2K_8bA",
   authDomain: "roundnet-board.firebaseapp.com",
+  databaseURL: "https://roundnet-board-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "roundnet-board",
   storageBucket: "roundnet-board.firebasestorage.app",
   messagingSenderId: "338294859185",
